@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ASP.NET_CRM_System_Development.Models.Customer>
+@{
+    ViewBag.Title = "Customer List";
+}
+
+<h2 class="my-4 text-center">@ViewBag.Title</h2>
+
+<table class="table table-bordered table-hover table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Name) </th>
+            <th>@Html.DisplayNameFor(model => model.Email) </th>
+            <th>@Html.DisplayNameFor(model => model.Phone) </th>
+            <th class="text-center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@customer.Name</td>
+                <td>@customer.Email</td>
+                <td>@customer.Phone</td>
+                <td class="text-center">
+                    @Html.ActionLink("Edit","Edit",new { id = customer.Id}, new {@class ="btn btn-warning btn-sm mx-1"}) |
+                    @Html.ActionLink("Delete","Delete", new {id = customer.Id},
+                        new {
+                            @class = "btn btn-danger btn-sm mx-1"                        
+                        })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="d-flex justify-content-end my-4">
+    
+    @Html.ActionLink("Creat New Customer", "Create", null, new { @class = "btn btn-primary"}) 
+ </div>

@@ -1,0 +1,22 @@
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Mm][Dd]64/
+arm/
+arm64/
+_build/
+
+# Package directories
+*.nuget/
+packages/
+
+.vs/
